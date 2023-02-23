@@ -35,9 +35,9 @@
 			valid = true;
 			errors.type = '';
 		}
-		if (fields.type.trim().length < 1) {
+		if (fields.topic.trim().length < 1) {
 			valid = false;
-			errors.type = 'Topic is too short';
+			errors.topic = 'Topic is too short';
 		} else {
 			valid = true;
 			errors.topic = '';
