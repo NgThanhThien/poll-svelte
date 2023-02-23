@@ -37,7 +37,6 @@
 	"dependencies": {
 		"@fortawesome/free-solid-svg-icons": "^6.3.0",
 		"@supabase/supabase-js": "^2.8.0",
-		"@sveltejs/adapter-static": "^2.0.1",
 		"moment": "^2.29.4"
 	}
 }
