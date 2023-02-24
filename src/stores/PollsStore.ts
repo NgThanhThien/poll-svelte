@@ -5,7 +5,6 @@ const PollStore = writable<any[]>([]);
 export const loadPolls = async () => {
 	const { data, error } = await supabaseClient.from('Polls').select();
 	if (data) {
-		console.log(data);
 		PollStore.set(data);
 	}
 	if (error) console.log(error);

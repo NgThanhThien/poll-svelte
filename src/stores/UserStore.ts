@@ -18,7 +18,6 @@ export const signUp = async (payload: ISignUp) => {
 };
 export const getUser = async () => {
 	const { data, error } = await supabaseClient.auth.getUser();
-	console.log(data);
 	if (data) {
 		UserStore.set(data);
 	}

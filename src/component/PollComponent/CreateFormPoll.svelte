@@ -51,9 +51,7 @@
 		}
 		if (valid) {
 			let poll = { ...fields, voteA: 0, voteB: 0 };
-			console.log(poll);
 			const data = await addPoll(poll);
-			console.log(data);
 			dispatch('addPoll');
 		}
 	};
