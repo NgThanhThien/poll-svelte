@@ -4,7 +4,8 @@
 	import Modal from './UIComponent/Modal.svelte';
 	import CreateFormPoll from './PollComponent/CreateFormPoll.svelte';
 	import { loadPolls } from '../stores/PollsStore';
-
+	import UserStore from '../stores/UserStore';
+	import LogOut from './LogOut.svelte';
 	let showModal = false;
 	const toggleModal = () => (showModal = !showModal);
 	const handleAddPoll = () => {
@@ -29,17 +30,23 @@
 				on:click={toggleModal}><span>Create Poll </span><Fa icon={faBolt} /></button
 			>
 		</div>
-		<!-- <div class="tw-text-base tw-flex tw-space-x-2 tw-items-center">
-			<button
-				class="tw-w-20 tw-h-8 tw-text-gray-700 tw-rounded tw-bg-white hover:tw-bg-purple-500 hover:tw-text-white tw-transition-all tw-duration-200"
-				>Login</button
-			>
-			<div style="width:1px" class="tw-h-8 tw-bg-blue-500" />
-			<button
-				class="tw-w-20 tw-h-8 tw-text-gray-700 tw-rounded tw-bg-white hover:tw-bg-purple-500 hover:tw-text-white tw-transition-all tw-duration-200"
-				>Sign up</button
-			>
-		</div> -->
+		{#if $UserStore}
+			<div>
+				<LogOut />
+			</div>
+		{:else}
+			<div class="tw-text-base tw-flex tw-space-x-2 tw-items-center">
+				<a
+					class="tw-w-20 tw-flex tw-justify-center tw-items-center tw-h-8 tw-text-gray-700 tw-rounded tw-bg-white hover:tw-bg-purple-500 hover:tw-text-white tw-transition-all tw-duration-200"
+					href="/signup">Sign up</a
+				>
+				<div style="width:1px" class="tw-h-8 tw-bg-blue-500" />
+				<a
+					class="tw-w-20 tw-flex tw-justify-center tw-items-center tw-h-8 tw-text-gray-700 tw-rounded tw-bg-white hover:tw-bg-purple-500 hover:tw-text-white tw-transition-all tw-duration-200"
+					href="/login">Login</a
+				>
+			</div>
+		{/if}
 	</div>
 </header>
 <Modal {showModal} on:click={toggleModal}><CreateFormPoll on:addPoll={handleAddPoll} /></Modal>

@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>SpeedVote</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 <section class=" tw-py-10 tw-min-h-80-screen tw-bg-gray-50">

@@ -1,9 +1,9 @@
-import { supabase } from '$lib/supabaseClient';
+import { supabaseClient } from '$lib/supabase';
 import { writable } from 'svelte/store';
 
 const PollStore = writable<any[]>([]);
 export const loadPolls = async () => {
-	const { data, error } = await supabase.from('Polls').select();
+	const { data, error } = await supabaseClient.from('Polls').select();
 	if (data) {
 		console.log(data);
 		PollStore.set(data);
@@ -13,7 +13,7 @@ export const loadPolls = async () => {
 
 export const updateVote = async (payload: any) => {
 	const { data, id } = payload;
-	const { error } = await supabase.from('Polls').update(data).eq('id', id);
+	const { error } = await supabaseClient.from('Polls').update(data).eq('id', id);
 	if (error)
 		return {
 			error: true,
@@ -24,7 +24,7 @@ export const updateVote = async (payload: any) => {
 	};
 };
 export const deletePoll = async (id: number | string) => {
-	const { error } = await supabase.from('Polls').delete().eq('id', id);
+	const { error } = await supabaseClient.from('Polls').delete().eq('id', id);
 	if (error)
 		return {
 			error: true,
@@ -35,7 +35,7 @@ export const deletePoll = async (id: number | string) => {
 	};
 };
 export const addPoll = async (data: any) => {
-	const { error } = await supabase.from('Polls').insert(data);
+	const { error } = await supabaseClient.from('Polls').insert(data);
 	if (error)
 		return {
 			error: true,

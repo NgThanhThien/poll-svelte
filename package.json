@@ -36,6 +36,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fortawesome/free-solid-svg-icons": "^6.3.0",
+		"@supabase/auth-helpers-sveltekit": "^0.8.7",
 		"@supabase/supabase-js": "^2.8.0",
 		"moment": "^2.29.4"
 	}
