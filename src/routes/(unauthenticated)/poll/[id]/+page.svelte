@@ -3,10 +3,10 @@
 	import { formatTime } from '$lib/helpers/moment';
 	import { tweened } from 'svelte/motion';
 	import { writable } from 'svelte/store';
-	import Card from '../../../component/UIComponent/Card.svelte';
-	import Modal from '../../../component/UIComponent/Modal.svelte';
-	import type { PollModel } from '../../../shared/question';
-	import { deletePoll, loadPolls, updateVote } from '../../../stores/PollsStore';
+	import Card from '../../../../component/UIComponent/Card.svelte';
+	import Modal from '../../../../component/UIComponent/Modal.svelte';
+	import type { PollModel } from '../../../../shared/question';
+	import { deletePoll, loadPolls, updateVote } from '../../../../stores/PollsStore';
 
 	export let data: PollModel;
 	let showModal = false;
@@ -62,11 +62,11 @@
 				<div class="tw-mt-4 tw-w-full tw-space-y-3">
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div
-						class="tw-w-full tw-bg-gray-100 tw-h-8 tw-relative hover:tw-opacity-70 tw-cursor-pointer tw-flex tw-items-center  tw-overflow-hidden tw-border-l-2 tw-border-indigo-800"
+						class="tw-w-full tw-bg-gray-100 tw-h-8 tw-relative hover:tw-opacity-70 tw-cursor-pointer tw-flex tw-items-center  tw-overflow-hidden tw-border-l-2 tw-border-indigo-800 tw-rounded-r-sm"
 						on:click={() => handleVote('a', $pollStore.id)}
 					>
 						<div
-							class="tw-absolute tw-h-full tw-bg-indigo-400 tw-bg-opacity-30 tw-w-1/2"
+							class="tw-absolute tw-h-full tw-bg-indigo-400 tw-bg-opacity-30 tw-w-1/2 tw-rounded-r-sm"
 							style="width: {$tweenedA}%"
 						/>
 						<div class="tw-text-gray-700 tw-mx-2 tw-text-sm">
@@ -75,11 +75,11 @@
 					</div>
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div
-						class="tw-w-full tw-bg-gray-100 tw-h-8 tw-relative hover:tw-opacity-70 tw-cursor-pointer tw-flex tw-items-center tw-overflow-hidden tw-border-l-2 tw-border-purple-800"
+						class="tw-w-full tw-bg-gray-100 tw-h-8 tw-relative hover:tw-opacity-70 tw-cursor-pointer tw-flex tw-items-center tw-overflow-hidden tw-border-l-2 tw-border-purple-800 tw-rounded-r-sm"
 						on:click={() => handleVote('b', $pollStore.id)}
 					>
 						<div
-							class="tw-absolute tw-h-full tw-bg-purple-400 tw-bg-opacity-30"
+							class="tw-absolute tw-h-full tw-bg-purple-400 tw-bg-opacity-30 tw-rounded-r-sm"
 							style="width: {$tweenedB}%"
 						/>
 						<div class="tw-text-gray-700 tw-mx-2 tw-text-sm">

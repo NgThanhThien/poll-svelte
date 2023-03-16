@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { PollModel } from '../../shared/question';
-	import Card from '../UIComponent/Card.svelte';
 	import Tag from '../UIComponent/Tag.svelte';
 	import { timeFromNow } from '$lib/helpers/moment';
+	import Card from '../UIComponent/Card.svelte';
 	export let poll: PollModel = {
 		question: '',
 		id: 0,

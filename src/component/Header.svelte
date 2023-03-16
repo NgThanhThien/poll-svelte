@@ -25,10 +25,18 @@
 			</div>
 		</a>
 		<div class="">
-			<button
-				class="tw-bg-purple-500 tw-rounded tw-text-base tw-px-4 tw-py-2 tw-text-white tw-flex tw-items-center tw-space-x-2"
-				on:click={toggleModal}><span>Create Poll </span><Fa icon={faBolt} /></button
-			>
+			{#if $UserStore}
+				<button
+					class="tw-bg-purple-500 tw-rounded tw-text-base tw-px-4 tw-py-2 tw-text-white tw-flex tw-items-center tw-space-x-2"
+					on:click={toggleModal}><span>Create Poll </span><Fa icon={faBolt} /></button
+				>
+			{:else}
+				<button
+					disabled
+					class="tw-bg-purple-500 tw-opacity-70 tw-rounded tw-text-base tw-px-4 tw-py-2 tw-text-white tw-flex tw-items-center tw-space-x-2"
+					on:click={toggleModal}><span>Create Poll </span><Fa icon={faBolt} /></button
+				>
+			{/if}
 		</div>
 		{#if $UserStore}
 			<div>

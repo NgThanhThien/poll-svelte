@@ -3,8 +3,6 @@
 	import { flip } from 'svelte/animate';
 	import PollStore from '../../stores/PollsStore';
 	import PollDetail from './PollDetail.svelte';
-	let showModal = false;
-	const toggleModal = () => (showModal = !showModal);
 </script>
 
 <div class="tw-space-y-8">

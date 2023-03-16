@@ -146,7 +146,7 @@
 	</div>
 	<div class="tw-flex tw-justify-center">
 		<button
-			class="tw-border tw-px-10 tw-py-2 tw-overflow-hidden tw-rounded-sm tw-inline-block tw-text-center tw-w-40 hover:tw-bg-indigo-500 hover:tw-text-white tw-transition-all tw-duration-200"
+			class="tw-border tw-px-10 tw-py-2 tw-overflow-hidden tw-rounded-sm tw-inline-block tw-text-center tw-w-40 hover:tw-bg-purple-500 hover:tw-text-white tw-transition-all tw-duration-200"
 			>Add poll</button
 		>
 	</div>
